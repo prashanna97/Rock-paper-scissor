@@ -1,17 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Inter:wght@400;600&display=swap');
+
 body{
-    background-color: rgb(255, 255, 255);
+    background-color: #f8f9ff;
+    background-image: radial-gradient(#dcdcff 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
     color: rgb(0, 0, 0);
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
-    
+    user-select: none;
+}
+.rps-logo{
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 10px;
 }
 .title{
     font-size: 40px;
     font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Fredoka', cursive;
 }
+
 .move-icon{
     height: 50px;
 }
@@ -53,6 +63,18 @@ body{
     margin-top: 20px;
     color: rgb(50, 50, 50);
     min-height: 25px;
+}
+.round-msg{
+    font-size: 20px;
+    color: black;
+    margin-bottom: 20px;
+}
+.input-container{
+    font-size: 16px;
+    padding: 5px 10px;
+    width: 60px;
+    border: 1px solid rgb(0, 0, 0);
+    outline: none;
 }
 .js-choose{
     min-height: 80px;
@@ -100,3 +122,19 @@ body{
     color: rgb(50, 50, 50);
     min-height: 25px;
 }
+.start-button{
+    border: none;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid rgb(0, 0, 0);
+    transition: all 0.3s ease;
+}
+.start-button:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+

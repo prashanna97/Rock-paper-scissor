@@ -7,10 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p class="title">Rock Paper Scissors</p>
+    <p class="title"><img onclick="refresh()" class="rps-logo" src="img/rock-paper-scissors.png" alt="rock-paper-scissors" width="40px">
+        Rock Paper Scissors Game
+    </p>
     <div class="rounds-input-container">
-        <p>enter the number of rounds you want to play:</p>
-        <input type="number" id="rounds-input" min="1" max="100" value="0">
+        <p class="round-msg">Enter the number of rounds you want to play:
+                    <input onkeypress="startGame()" class="input-container" type="number" id="rounds-input" min="1" max="100" value="0">
+        </p>
+
         <button onclick="startGame()" class="start-button">Start Game</button>
         <p class="game-start-msg"></p>
         <p class="game-error-msg"></p>
@@ -33,6 +37,8 @@
     <button onclick="score.wins=0; score.losses=0; score.ties=0; localStorage.removeItem('score'); updateScoreElement();" class="reset-score-button">
         Reset Score
     </button>
+
+    <button onclick="playAgain()" class="start-button">Play Again</button>
 
     <script src="script.js"></script>
 

@@ -55,7 +55,7 @@ function updateScoreElement(){
 function playGame(playerChoice) {
     // Check if game is active and rounds remaining
     if (!gameActive) {
-        document.querySelector('.game-error-msg').innerHTML = 'Please start a new game by entering number of rounds and clicking Start Game.';
+        document.querySelector('.game-error-msg').innerHTML = 'Please start the game by entering number of rounds and clicking Start Game.';
         return;
     }
     
@@ -124,7 +124,7 @@ setTimeout(() => {
     // Check if game is over
     if (currentRound === totalRounds) {
         setTimeout(() => {
-            document.querySelector('.js-result').innerHTML = `Game Over! Final Score - Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+            document.querySelector('.js-result').innerHTML = `Game Over! Final Score - Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties} <br> Wanna play again?`;
             gameActive = false;
         }, 1000);
     }
@@ -139,3 +139,29 @@ window.addEventListener('DOMContentLoaded', (event) => {
     document.querySelector('.player-choice-icon').style.animation = 'none';
     document.querySelector('.computer-choice-icon').style.animation = 'none';
 });
+
+function refresh(){
+    window.location.reload();
+}
+function playAgain(){
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    localStorage.removeItem('score');
+    updateScoreElement();
+    document.querySelector('.game-error-msg').innerHTML = '';
+    totalRounds = 0;
+    currentRound = 0;
+    gameActive = false;
+    document.querySelector('.js-round').innerHTML = `Round: 0/0`;
+    document.querySelector('#rounds-input').value = '0';
+    document.querySelector('.js-choose').innerHTML = 
+    `You choosed 
+        <img src="img/rock-emoji.png" class="move-icon player-choice-icon"> 
+    computer choosed 
+        <img src="img/rock-emoji.png" class="move-icon computer-choice-icon">`;
+    document.querySelector('.js-result').innerHTML = '';
+    document.querySelector('.game-start-msg').innerHTML = '';
+    document.querySelector('.player-choice-icon').style.animation = 'none';
+    document.querySelector('.computer-choice-icon').style.animation = 'none';
+}
