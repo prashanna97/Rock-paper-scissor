@@ -8,6 +8,13 @@
 </head>
 <body>
     <p class="title">Rock Paper Scissors</p>
+    <div class="rounds-input-container">
+        <p>enter the number of rounds you want to play:</p>
+        <input type="number" id="rounds-input" min="1" max="100" value="5">
+        <button onclick="startGame()" class="start-button">Start Game</button>
+        <p class="game-start-msg"></p>
+        <p class="game-error-msg"></p>
+    </div>
     <button onclick="playGame('rock')" class="move-btn">
         <img src="img/rock-emoji.png" alt="Rock-img" class="move-icon">
     </button>
@@ -19,9 +26,9 @@
     <button onclick="playGame('scissors')" class="move-btn">
         <img src="img/scissors-emoji.png" alt="Scissors-img" class="move-icon">
     </button>
+    <p class="js-round rounds"></p>
+    <p class="js-choose"></p>
     <p class="js-result result"></p>
-    <p class="js-choose">
-    </p>
     <p class="js-score score"></p>
     <button onclick="score.wins=0; score.losses=0; score.ties=0; localStorage.removeItem('score'); updateScoreElement();" class="reset-score-button">
         Reset Score

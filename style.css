@@ -1,7 +1,11 @@
 body{
-    background-color: black;
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    
 }
 .title{
     font-size: 30px;
@@ -13,24 +17,79 @@ body{
 .move-btn{
     background-color: transparent;
     cursor: pointer;
-    border: 3px solid white;
+    border: 3px solid rgb(0, 0, 0);
     border-radius: 60px;
     width: 120px;
     height: 120px;
     margin-right: 10px;
+    transition: all 0.3s ease;
+}
+.move-btn:hover{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 .result{
     font-size: 25px;
     font-weight: bold;
-    margin-top: 50px;
+    color: rgb(30, 30, 30);
+    min-height: 30px;
+}
+.game-start-msg{
+    font-size: 16px;
+    color: black;
+    min-height: 20px;
+    margin-top: 10px;
+}
+.rounds{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: rgb(50, 50, 50);
+    min-height: 25px;
+}
+.js-choose{
+    min-height: 80px;
+    margin-top: 30px;
 }
 .score{
-    margin-top: 50px;
+    display: none;
 }
 .reset-score-button{
-    border: none;
-    background-color: white;
-    font-size: 15px;
-    padding: 8px 15px;
-    cursor: pointer;
+    display: none;
+}
+.reset-score-button:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+.player-choice-icon{
+    animation: player-move 1s ease;
+    
+}
+.computer-choice-icon{
+    animation: computer-move 1s ease;
+}
+@keyframes player-move {
+    0% {transform: translateY(0px);}
+    25% {transform: translateY(-20px);}
+    50% {transform: translateY(0px);}
+    75% {transform: translateY(-10px);}
+    100% {transform: translateY(0px);}
+}
+@keyframes computer-move {
+    0% {transform: translateY(0px);}
+    25% {transform: translateY(-20px);}
+    50% {transform: translateY(0px);}
+    75% {transform: translateY(-10px);}
+    100% {transform: translateY(0px);}
+}
+
+.rounds-input-container{
+    margin-bottom: 20px;
+}
+.rounds{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: rgb(50, 50, 50);
+    min-height: 25px;
 }
