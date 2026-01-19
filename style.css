@@ -11,6 +11,50 @@ body{
     padding: 0;
     user-select: none;
 }
+.switch {
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    right: 50px;
+    top: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #e5e7eb;
+    border-radius: 999px;
+    transition: 0.3s;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    top: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+input:checked + .slider {
+    background-color: black;
+}
+
+input:checked + .slider::before {
+    transform: translateX(26px);
+}
+
 .rps-logo{
     cursor: pointer;
     vertical-align: middle;
@@ -43,7 +87,7 @@ body{
     font-size: 25px;
     font-weight: bold;
     color: rgb(30, 30, 30);
-    min-height: 30px;
+    min-height: 60px;
 }
 .game-start-msg{
     font-size: 16px;
@@ -77,10 +121,7 @@ body{
     border: 1px solid rgb(0, 0, 0);
     outline: none;
 }
-.js-choose{
-    min-height: 80px;
-    margin-top: 30px;
-}
+
 .score{
     display: none;
 }
@@ -138,4 +179,38 @@ body{
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
 }
-
+.dark-mode{
+    background-color: #121212;
+    color: #e0e0e0;
+    background-image: radial-gradient(#2c2c2c 1.5px, transparent 1.5px);
+}
+.dark-mode .move-btn{
+    border: 3px solid #e0e0e0;
+    color: #e0e0e0;
+}
+.dark-mode .start-button{
+    background-color: #ffffff;
+    color: #121212;
+    border: 1px solid #ffffff;
+}
+.dark-mode .start-button:hover{
+    background-color: #121212;
+    color: #ffffff;
+}
+.dark-mode .move-btn:hover{
+    background-color: #ffffff;
+    color: #121212;
+}
+.dark-mode .slider {
+    background-color: #444444;
+}
+.dark-mode input:checked + .slider {
+    background-color: #585858;
+}
+.dark-mode .game-start-msg,
+.dark-mode .game-error-msg,
+.dark-mode .round-msg,
+.dark-mode .rounds,
+.dark-mode .result{
+    color: #ffffff;
+}

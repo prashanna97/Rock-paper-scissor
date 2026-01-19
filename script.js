@@ -15,7 +15,7 @@ startGame = () => {
     const roundsInput = document.getElementById('rounds-input');
     const rounds = parseInt(roundsInput.value);
     if (isNaN(rounds) || rounds < 1 || rounds > 100) {
-        document.querySelector('.game-start-msg').innerHTML = 'Please enter a valid number of rounds between 1 and 100.';
+        document.querySelector('.game-start-msg').innerHTML = 'Enter the number of round you want to play.';
         gameActive = false;
         return;
     }
@@ -163,3 +163,13 @@ function playAgain(){
     document.querySelector('.player-choice-icon').style.animation = 'none';
     document.querySelector('.computer-choice-icon').style.animation = 'none';
 }
+
+// Theme toggle functionality
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('change', function() {
+    if (this.checked) {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
+    }
+});
