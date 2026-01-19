@@ -6,6 +6,12 @@ let currentRound = 0;
 let gameActive = false;
 
 startGame = () => {
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    localStorage.removeItem('score');
+    updateScoreElement();
+    document.querySelector('.game-error-msg').innerHTML = '';
     const roundsInput = document.getElementById('rounds-input');
     const rounds = parseInt(roundsInput.value);
     if (isNaN(rounds) || rounds < 1 || rounds > 100) {
