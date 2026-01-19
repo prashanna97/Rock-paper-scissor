@@ -132,3 +132,10 @@ setTimeout(() => {
 
     document.querySelector('.js-round').innerHTML = `Round: ${currentRound}/${totalRounds}`;
 }
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelector('.js-round').innerHTML = `Round: 0/0`;
+    document.querySelector('#rounds-input').value = '0';
+    document.querySelector('.player-choice-icon').style.animation = 'none';
+    document.querySelector('.computer-choice-icon').style.animation = 'none';
+});

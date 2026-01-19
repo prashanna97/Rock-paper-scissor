@@ -8,8 +8,9 @@ body{
     
 }
 .title{
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .move-icon{
     height: 50px;
@@ -38,7 +39,7 @@ body{
     font-size: 16px;
     color: black;
     min-height: 20px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 .game-error-msg{
     font-size: 16px;
