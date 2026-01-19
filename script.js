@@ -55,12 +55,10 @@ function updateScoreElement(){
 function playGame(playerChoice) {
     // Check if game is active and rounds remaining
     if (!gameActive) {
-        document.querySelector('.game-error-msg').innerHTML = 'Please start the game by entering number of rounds and clicking Start Game.';
         return;
     }
     
     if (currentRound >= totalRounds) {
-        document.querySelector('.game-error-msg').innerHTML = 'Game Over! All rounds completed. Start a new game.';
         gameActive = false;
         return;
     }
